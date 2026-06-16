@@ -1,0 +1,103 @@
+% =============================================================================
+% main.tex — COSC 1436: Programming Fundamentals I
+% Tarrant County College District
+% Open Educational Resource
+%
+% Compile with: pdflatex → biber → pdflatex → pdflatex
+%   (or use latexmk -pdf main.tex)
+% =============================================================================
+
+% Book title macros — defined BEFORE \input{preamble} so hyperref can use them
+\newcommand{\booktitle}{Programming Fundamentals I}
+\newcommand{\booksubtitle}{An Introduction to Structured Programming}
+\newcommand{\bookauthors}{Tarrant County College Department of Computer Science}
+\newcommand{\bookcourse}{COSC 1436}
+\newcommand{\bookversion}{0.1 (Draft)}
+\newcommand{\bookyear}{2025}
+
+\documentclass[
+  12pt,
+  twoside,        % mirrored margins for print; switch to oneside for digital-only
+  openright,      % chapters start on odd (right-hand) pages
+]{book}
+
+\input{../preamble}
+
+% Add bibliography file when ready
+% \addbibresource{references.bib}
+
+% =============================================================================
+\begin{document}
+% =============================================================================
+
+% -----------------------------------------------------------------------------
+% Front matter
+% -----------------------------------------------------------------------------
+\frontmatter
+\pagestyle{empty}
+
+\input{frontmatter/titlepage}
+\cleardoublepage{}
+
+\pagestyle{fancy}
+\tableofcontents
+\cleardoublepage{}
+
+\listoffigures
+\cleardoublepage{}
+
+% Uncomment when you have listings worth indexing
+% \lstlistoflistings
+% \cleardoublepage
+
+\input{frontmatter/preface}
+\cleardoublepage{}
+
+% -----------------------------------------------------------------------------
+% Main matter
+% -----------------------------------------------------------------------------
+\mainmatter{}
+
+% ---- Part I: Foundations ----
+\part{Foundations}
+
+\input{chapters/ch01}   % Computers, Data, and Programs
+\input{chapters/ch02}   % The Software Development Process
+
+% ---- Part II: Core Programming Concepts ----
+\part{Core Programming Concepts}
+
+\input{chapters/ch03}   % Data Types, Variables, and Constants
+\input{chapters/ch04}   % Input, Output, and Operators
+\input{chapters/ch05}   % Selection
+\input{chapters/ch06}   % Iteration
+
+% ---- Part III: Organizing Code and Data ----
+\part{Organizing Code and Data}
+
+\input{chapters/ch07}   % Functions and Procedures
+\input{chapters/ch08}   % Arrays
+\input{chapters/ch09}   % Strings
+
+% ---- Part IV: Writing Good Software ----
+\part{Writing Good Software}
+
+\input{chapters/ch10}   % Designing for the User
+\input{chapters/ch11}   % Testing and Debugging
+\input{chapters/ch12}   % Version Control in Practice
+
+% -----------------------------------------------------------------------------
+% Back matter
+% -----------------------------------------------------------------------------
+\backmatter{}
+
+\appendix
+\input{appendices/pseudocode-reference}   % Cambridge pseudocode quick reference
+
+% \printbibliography[heading=bibintoc]
+
+\printindex
+
+% =============================================================================
+\end{document}
+% =============================================================================
